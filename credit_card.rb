@@ -1,7 +1,9 @@
-require_relative './luhn_validator.rb'
+# frozen_string_literal: true
+
+require_relative './luhn_validator'
 require 'json'
 
-class CreditCard
+class CreditCard # rubocop:disable Style/Documentation
   # TODO: mixin the LuhnValidator using an 'include' statement
   include LuhnValidator
   # instance variables with automatic getter/setter methods
@@ -16,7 +18,7 @@ class CreditCard
   end
 
   # returns json string
-  def to_json
+  def to_json(*_args)
     {
       # TODO: setup the hash with all instance vairables to serialize into json
       'number' => @number,
